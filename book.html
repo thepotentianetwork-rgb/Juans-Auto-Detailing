@@ -250,6 +250,45 @@
     line-height: 1.7;
   }
 
+  /* 24-HOUR NOTICE */
+  .notice-24h {
+    max-width: 640px;
+    margin: 32px auto 0;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    text-align: left;
+    background: linear-gradient(135deg, rgba(184,190,196,0.09), rgba(184,190,196,0.02));
+    border: 1px solid rgba(184,190,196,0.28);
+    border-left: 3px solid var(--gold);
+    padding: 22px 26px;
+  }
+  .notice-24h-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border: 1px solid rgba(184,190,196,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+  }
+  .notice-24h-icon svg { width: 18px; height: 18px; }
+  .notice-24h-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .notice-24h-body {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .notice-24h-body strong { color: var(--white); font-weight: 500; }
+
   /* CONTACT INFO STRIP */
   .contact-strip {
     display: grid;
@@ -651,6 +690,7 @@
     .hamburger-btn { display: flex; }
     .page-header { padding: 48px 24px 32px; }
     .page-title { font-size: clamp(32px, 9vw, 48px); }
+    .notice-24h { margin: 28px 0 0; padding: 18px 20px; }
     .contact-strip { grid-template-columns: 1fr 1fr; margin: 0 24px; }
     .form-wrap { padding: 40px 24px; }
     .card-header, .form-body { padding: 28px 24px; }
@@ -703,6 +743,16 @@
   <p style="margin-top:20px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; color:var(--muted);">
     Not sure yet? <a href="services.html" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Browse our services & pricing →</a>
   </p>
+
+  <div class="notice-24h">
+    <div class="notice-24h-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.25 2"/></svg>
+    </div>
+    <div>
+      <p class="notice-24h-title">Booking within 24 hours?</p>
+      <p class="notice-24h-body">Last-minute requests are subject to change based on our availability — but we'll always do our best to accommodate you. <strong>Give us a call or text</strong>, or wait to hear back from a team member before your appointment is officially confirmed.</p>
+    </div>
+  </div>
 </section>
 
 <div class="contact-strip">
