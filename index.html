@@ -1062,9 +1062,9 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    /* Feather all four edges so the video melts into the background */
-    -webkit-mask-image: radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 92%);
-    mask-image: radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 92%);
+    /* Feather just the outer edges so the video melts into the background */
+    -webkit-mask-image: radial-gradient(ellipse 92% 94% at 50% 50%, #000 88%, transparent 100%);
+    mask-image: radial-gradient(ellipse 92% 94% at 50% 50%, #000 88%, transparent 100%);
   }
   /* Extra vignette overlay to deepen the blend into the dark bg */
   .tv-video-wrap::after {
@@ -1072,7 +1072,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse 80% 84% at 50% 50%, transparent 50%, var(--black) 96%);
+    background: radial-gradient(ellipse 92% 94% at 50% 50%, transparent 85%, var(--black) 100%);
   }
   .tv-reviews { min-width: 0; }
   @media (max-width: 900px) {
