@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="5; url=https://portal.potentianetwork.com/crm/juans-auto-detailing/portal">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZV4ZPFCZT"></script>
@@ -701,6 +702,10 @@
     .service-area-note { padding: 0 24px 40px; }
     footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
   }
+  .book-online-body { padding: 36px 40px 44px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .book-online-btn { display: inline-block; text-decoration: none; font-size: 13px; padding: 20px 44px; }
+  .book-online-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+  @media (max-width: 600px) { .book-online-body { padding: 28px 22px 34px; } .book-online-btn { width: 100%; text-align: center; } }
 </style>
 </head>
 <body>
@@ -710,7 +715,7 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="book.html" style="color:var(--gold);">Book Now</a></li>
+    <li><a href="https://portal.potentianetwork.com/crm/juans-auto-detailing/portal" style="color:var(--gold);">Book Now</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -721,7 +726,7 @@
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
-  <a href="book.html" class="active-link">Book Now</a>
+  <a href="https://portal.potentianetwork.com/crm/juans-auto-detailing/portal" class="active-link">Book Now</a>
   <div class="mobile-menu-icons">
     <a href="tel:4352821061" aria-label="Call us">
       <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -739,7 +744,7 @@
 <section class="page-header">
   <p class="page-label">Get Started</p>
   <h1 class="page-title">Don't Stress,<br>Enjoy The <em>Best</em>.</h1>
-  <p class="page-sub">Fill out the form below and we'll lock it in. We confirm by phone or text — usually within the hour.</p>
+  <p class="page-sub">Book online in under 2 minutes. We confirm by phone or text — usually within the hour.</p>
   <p style="margin-top:20px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; color:var(--muted);">
     Not sure yet? <a href="services.html" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Browse our services & pricing →</a>
   </p>
@@ -754,6 +759,23 @@
     </div>
   </div>
 </section>
+
+<div class="form-wrap">
+  <div class="card">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <p class="header-label">Book Online</p>
+      <h2 class="header-title">Book A Service</h2>
+      <p class="header-sub">Pick your service, drop-off or mobile, and a day and time on our online booking page. No account needed.</p>
+    </div>
+    <div class="book-online-body">
+      <a class="btn-submit book-online-btn" href="https://portal.potentianetwork.com/crm/juans-auto-detailing/portal">Book Online →</a>
+      <p class="submit-note">We'll confirm by phone or text, usually within the hour.</p>
+      <p class="submit-note" id="redirectNote">Taking you to the booking page… If nothing happens, <a href="https://portal.potentianetwork.com/crm/juans-auto-detailing/portal" style="color:var(--gold); text-decoration:underline;">tap here</a>.</p>
+    </div>
+  </div>
+</div>
+
 
 <div class="contact-strip">
   <div class="contact-item">
@@ -774,205 +796,6 @@
   </div>
 </div>
 
-<div class="form-wrap">
-  <div class="card">
-    <div class="card-accent"></div>
-    <div class="card-header">
-      <p class="header-label">Booking Request</p>
-      <h2 class="header-title">Book A Service</h2>
-      <p class="header-sub">Select one or more services, then pick a date and time.</p>
-    </div>
-
-    <!-- SETUP NOTICE — replace placeholder with real Formspree endpoint when ready -->
-    <div class="setup-banner" id="setupBanner">
-      <span class="setup-banner-icon">⚙️</span>
-      <div class="setup-banner-text">
-        <strong>Placeholder active</strong>
-        This form is not yet wired to a live endpoint. Replace FORMSPREE_URL in the script with your real Formspree link to start receiving bookings by email.
-      </div>
-    </div>
-
-    <div class="form-body" id="formBody">
-
-      <!-- SERVICE SELECTION (multi-select) -->
-      <div class="field">
-        <label>Select Service(s) <span>*</span></label>
-        <div class="service-group-label">Packages</div>
-        <div class="service-checklist" id="packageChecklist">
-          <label class="service-check-option">
-            <input type="checkbox" value="Regular Package — $165" data-label="Regular — Interior & Exterior ($165)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Regular — Interior & Exterior ($165)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Medium Package — $195" data-label="Medium — Interior, Shampoo & Exterior ($195)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Medium — Interior, Shampoo & Exterior ($195)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Super Package — $245" data-label="Super — Interior, Shampoo, Exterior & Engine ($245)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Super — Interior, Shampoo, Exterior & Engine ($245)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Full Detail Package — $275" data-label="Full Detail — Everything + Wax ($275)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Full Detail — Everything + Wax ($275)</span>
-          </label>
-        </div>
-
-        <div class="service-group-label" style="margin-top: 20px;">Individual / Add-Ons</div>
-        <div class="service-checklist" id="individualChecklist">
-          <label class="service-check-option">
-            <input type="checkbox" value="Interior Only — from $125" data-label="Interior Only (from $125)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Interior Only (from $125)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Exterior Only — from $75" data-label="Exterior Only (from $75)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Exterior Only (from $75)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Paint Polish — from $400" data-label="Paint Polish (from $400)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Paint Polish (from $400)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Polish + Ceramic Coat — from $600" data-label="Polish + Ceramic Coat (from $600)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Polish + Ceramic Coat (from $600)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Headlight Restoration — $45" data-label="Headlight Restoration ($45)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Headlight Restoration ($45)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Pet Hair Removal — $35" data-label="Pet Hair Removal ($35)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Pet Hair Removal ($35)</span>
-          </label>
-          <label class="service-check-option">
-            <input type="checkbox" value="Odor Removal — $65" data-label="Odor Removal ($65)">
-            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-            <span>Odor Removal ($65)</span>
-          </label>
-        </div>
-        <span class="field-error" id="servicesErr">Please select at least one service</span>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="field-row">
-        <div class="field">
-          <label>First Name <span>*</span></label>
-          <input type="text" id="firstName" placeholder="James">
-          <span class="field-error" id="firstNameErr">Required</span>
-        </div>
-        <div class="field">
-          <label>Last Name <span>*</span></label>
-          <input type="text" id="lastName" placeholder="Miller">
-          <span class="field-error" id="lastNameErr">Required</span>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Phone Number <span>*</span></label>
-        <input type="tel" id="phone" placeholder="(435) 000-0000">
-        <span class="field-error" id="phoneErr">Enter a valid phone number</span>
-      </div>
-
-      <div class="field">
-        <label>Email Address</label>
-        <input type="email" id="email" placeholder="james@email.com">
-        <span class="field-error" id="emailErr">Enter a valid email</span>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="field">
-        <label>Drop-Off Or Mobile <span>*</span></label>
-        <select id="serviceMode">
-          <option value="" disabled selected>Choose one…</option>
-          <option value="Drop-off">Drop-off</option>
-          <option value="Mobile — come to me">Mobile — come to me</option>
-        </select>
-        <span class="field-error" id="serviceModeErr">Please choose drop-off or mobile</span>
-        <div class="dropoff-hint" id="dropoffHint">📍 Drop-off at: 900 W Main St #20, Tremonton, UT 84337</div>
-      </div>
-
-      <div class="field-row">
-        <div class="field">
-          <label>Vehicle Year <span>*</span></label>
-          <input type="text" id="vehicleYear" placeholder="2021" maxlength="4">
-          <span class="field-error" id="vehicleYearErr">Required</span>
-        </div>
-        <div class="field">
-          <label>Make & Model <span>*</span></label>
-          <input type="text" id="vehicleModel" placeholder="BMW M3">
-          <span class="field-error" id="vehicleModelErr">Required</span>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Any Pet Hair Or Strong Odors?</label>
-        <div class="checkbox-row">
-          <label class="checkbox-option">
-            <input type="checkbox" id="hasPetHair">
-            <span>Pet hair</span>
-          </label>
-          <label class="checkbox-option">
-            <input type="checkbox" id="hasOdor">
-            <span>Strong odor (smoke, mildew, spills, etc.)</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Address <span id="addressOptionalNote">(if mobile service)</span></label>
-        <input type="text" id="address" placeholder="123 Main St, City, State">
-        <span class="field-error" id="addressErr">Required for mobile service</span>
-      </div>
-
-      <div class="field">
-        <label>Preferred Date & Time <span>*</span></label>
-        <div class="cal-wrap" id="calWrap">
-          <div class="cal-nav">
-            <button type="button" class="cal-nav-btn" id="calPrev">&#8592;</button>
-            <span class="cal-month-label" id="calMonthLabel"></span>
-            <button type="button" class="cal-nav-btn" id="calNext">&#8594;</button>
-          </div>
-          <div class="cal-grid" id="calGrid"></div>
-          <div class="time-slots" id="timeSlots">
-            <div class="time-slots-label">Pick a time</div>
-            <div class="slots-grid" id="slotsGrid"></div>
-          </div>
-          <div class="cal-selection-display" id="calSelectionDisplay"></div>
-        </div>
-        <span class="field-error" id="preferredDateErr">Please select a date and time</span>
-      </div>
-
-      <div class="field">
-        <label>Additional Notes</label>
-        <textarea id="notes" placeholder="Any specific concerns, paint issues, interior condition, etc."></textarea>
-      </div>
-
-      <div class="submit-row">
-        <button class="btn-submit" id="submitBtn" onclick="handleSubmit()">Request Booking</button>
-        <p class="submit-note">We'll confirm by phone or email within the hour.</p>
-      </div>
-    </div>
-
-    <div class="success-state" id="successState">
-      <div class="success-icon">✅</div>
-      <div class="success-title">You're Booked In</div>
-      <p class="success-msg">Your request has been sent. We'll confirm your appointment within the hour by phone or email.</p>
-      <button class="btn-reset" onclick="resetForm()">Submit Another</button>
-    </div>
-  </div>
-</div>
-
 <p class="service-area-note">Serving Tremonton · Brigham City · Ogden · Logan · Perry · Layton · Preston</p>
 
 <footer>
@@ -981,7 +804,7 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="index.html">About</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="book.html">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="footer-social">
     <a href="https://www.facebook.com/profile.php?id=100083405322153" target="_blank" rel="noopener" aria-label="Facebook">
@@ -1014,284 +837,8 @@
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
   }
 
-  // ─────────────────────────────────────────────
-  // FORMSPREE SETUP — replace with the real endpoint
-  // ─────────────────────────────────────────────
-  const FORMSPREE_URL = 'https://formspree.io/f/mykaqben';
-  const isConfigured = !FORMSPREE_URL.includes('PLACEHOLDER');
-  if (isConfigured) {
-    document.getElementById('setupBanner').style.display = 'none';
-  }
-
-  // ── SERVICE SELECTION (multi-select) ──────────
-  function getSelectedServices() {
-    const checked = document.querySelectorAll('#packageChecklist input:checked, #individualChecklist input:checked');
-    return Array.from(checked).map(el => ({ value: el.value, label: el.dataset.label }));
-  }
-
-  // ── DROP-OFF HINT ─────────────────────────────
-  const serviceModeEl = document.getElementById('serviceMode');
-  const dropoffHint   = document.getElementById('dropoffHint');
-  if (serviceModeEl && dropoffHint) {
-    serviceModeEl.addEventListener('change', () => {
-      dropoffHint.classList.toggle('visible', serviceModeEl.value === 'Drop-off');
-    });
-  }
-
-  // ── CALENDAR ──────────────────────────────────
-  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const DAYS   = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-  const TIME_SLOTS = ['8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
-
-  const now = new Date();
-  let viewYear  = now.getFullYear();
-  let viewMonth = now.getMonth();
-  let selectedDate = null;
-  let selectedTime = null;
-
-  function renderCalendar() {
-    const label = document.getElementById('calMonthLabel');
-    const grid  = document.getElementById('calGrid');
-    label.textContent = `${MONTHS[viewMonth]} ${viewYear}`;
-    grid.innerHTML = '';
-
-    DAYS.forEach(d => {
-      const el = document.createElement('div');
-      el.className = 'cal-dow';
-      el.textContent = d;
-      grid.appendChild(el);
-    });
-
-    const firstDay = new Date(viewYear, viewMonth, 1).getDay();
-    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
-    const todayStr = now.toDateString();
-
-    for (let i = 0; i < firstDay; i++) {
-      const el = document.createElement('div');
-      el.className = 'cal-day cal-day--empty';
-      grid.appendChild(el);
-    }
-
-    for (let d = 1; d <= daysInMonth; d++) {
-      const date = new Date(viewYear, viewMonth, d);
-      const isPast = date < new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const isSun  = date.getDay() === 0;
-      const el = document.createElement('div');
-      let cls = 'cal-day';
-      if (isPast || isSun) cls += ' cal-day--disabled';
-      if (date.toDateString() === todayStr) cls += ' cal-day--today';
-      if (selectedDate && date.toDateString() === selectedDate.toDateString()) cls += ' cal-day--selected';
-      el.className = cls;
-      el.textContent = d;
-      if (!isPast && !isSun) el.addEventListener('click', () => selectDate(date));
-      grid.appendChild(el);
-    }
-  }
-
-  function selectDate(date) {
-    selectedDate = date;
-    selectedTime = null;
-    document.getElementById('calWrap').classList.add('active');
-    document.getElementById('calWrap').classList.remove('invalid');
-    document.getElementById('preferredDateErr').classList.remove('visible');
-    renderCalendar();
-    renderTimeSlots();
-    updateSelectionDisplay();
-  }
-
-  function renderTimeSlots() {
-    const wrap = document.getElementById('timeSlots');
-    const grid = document.getElementById('slotsGrid');
-    wrap.classList.add('visible');
-    grid.innerHTML = '';
-    TIME_SLOTS.forEach(t => {
-      const el = document.createElement('div');
-      el.className = 'slot' + (selectedTime === t ? ' selected' : '');
-      el.textContent = t;
-      el.addEventListener('click', () => {
-        selectedTime = t;
-        renderTimeSlots();
-        updateSelectionDisplay();
-      });
-      grid.appendChild(el);
-    });
-  }
-
-  function updateSelectionDisplay() {
-    const display = document.getElementById('calSelectionDisplay');
-    if (selectedDate && selectedTime) {
-      const dateStr = selectedDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-      display.textContent = `✓  ${dateStr} at ${selectedTime}`;
-    } else if (selectedDate) {
-      display.textContent = '← Now pick a time below';
-    } else {
-      display.textContent = '';
-    }
-  }
-
-  document.getElementById('calPrev').addEventListener('click', () => {
-    viewMonth--;
-    if (viewMonth < 0) { viewMonth = 11; viewYear--; }
-    if (viewYear < now.getFullYear() || (viewYear === now.getFullYear() && viewMonth < now.getMonth())) {
-      viewMonth = now.getMonth(); viewYear = now.getFullYear();
-    }
-    renderCalendar();
-  });
-
-  document.getElementById('calNext').addEventListener('click', () => {
-    viewMonth++;
-    if (viewMonth > 11) { viewMonth = 0; viewYear++; }
-    renderCalendar();
-  });
-
-  renderCalendar();
-
-  // ── VALIDATION ────────────────────────────────
-  function validate() {
-    let valid = true;
-
-    // At least one service must be selected
-    const selectedServices = getSelectedServices();
-    const servicesErrEl = document.getElementById('servicesErr');
-    if (selectedServices.length === 0) {
-      servicesErrEl.classList.add('visible');
-      valid = false;
-    } else {
-      servicesErrEl.classList.remove('visible');
-    }
-
-    const fields = [
-      { id: 'firstName',    errId: 'firstNameErr',    check: v => v.trim().length > 0 },
-      { id: 'lastName',     errId: 'lastNameErr',     check: v => v.trim().length > 0 },
-      { id: 'phone',        errId: 'phoneErr',        check: v => /[\d\s\-\(\)]{7,}/.test(v) },
-      { id: 'serviceMode',  errId: 'serviceModeErr',  check: v => v !== '' },
-      { id: 'vehicleYear',  errId: 'vehicleYearErr',  check: v => /^\d{4}$/.test(v.trim()) },
-      { id: 'vehicleModel', errId: 'vehicleModelErr', check: v => v.trim().length > 0 },
-    ];
-
-    // Address required only for mobile service
-    const mode = document.getElementById('serviceMode').value;
-    const addressEl = document.getElementById('address');
-    const addressErrEl = document.getElementById('addressErr');
-    if (mode === 'Mobile — come to me' && addressEl.value.trim().length === 0) {
-      addressEl.classList.add('invalid'); addressErrEl.classList.add('visible'); valid = false;
-    } else {
-      addressEl.classList.remove('invalid'); addressErrEl.classList.remove('visible');
-    }
-
-    if (!selectedDate || !selectedTime) {
-      document.getElementById('calWrap').classList.add('invalid');
-      document.getElementById('preferredDateErr').classList.add('visible');
-      valid = false;
-    } else {
-      document.getElementById('calWrap').classList.remove('invalid');
-      document.getElementById('preferredDateErr').classList.remove('visible');
-    }
-
-    const emailVal = document.getElementById('email').value;
-    if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
-      document.getElementById('email').classList.add('invalid');
-      document.getElementById('emailErr').classList.add('visible');
-      valid = false;
-    } else {
-      document.getElementById('email').classList.remove('invalid');
-      document.getElementById('emailErr').classList.remove('visible');
-    }
-
-    fields.forEach(({ id, errId, check }) => {
-      const el = document.getElementById(id);
-      const errEl = document.getElementById(errId);
-      if (!check(el.value)) {
-        el.classList.add('invalid');
-        errEl.classList.add('visible');
-        valid = false;
-      } else {
-        el.classList.remove('invalid');
-        errEl.classList.remove('visible');
-      }
-    });
-
-    return valid;
-  }
-
-  // ── SUBMIT ────────────────────────────────────
-  async function handleSubmit() {
-    if (!validate()) return;
-
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    const dateStr = selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-    const selectedServices = getSelectedServices();
-    const servicesList = selectedServices.map(s => s.value).join('; ');
-
-    const petHairOrOdor = [];
-    if (document.getElementById('hasPetHair').checked) petHairOrOdor.push('Pet hair');
-    if (document.getElementById('hasOdor').checked) petHairOrOdor.push('Strong odor');
-
-    const payload = {
-      services_selected: servicesList,
-      service_count:  selectedServices.length,
-      name:           `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
-      phone:          document.getElementById('phone').value,
-      email:          document.getElementById('email').value || 'Not provided',
-      service_mode:   document.getElementById('serviceMode').value,
-      vehicle:        `${document.getElementById('vehicleYear').value} ${document.getElementById('vehicleModel').value}`,
-      pet_hair_or_odor: petHairOrOdor.length ? petHairOrOdor.join(', ') : 'None reported',
-      preferred_date: `${dateStr} at ${selectedTime}`,
-      address:        document.getElementById('address').value || 'N/A (drop-off)',
-      notes:          document.getElementById('notes').value || 'None',
-    };
-
-    if (!isConfigured) {
-      // Demo mode — show success without sending, since Formspree URL is a placeholder
-      setTimeout(showSuccess, 800);
-      return;
-    }
-
-    try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (res.ok) {
-        showSuccess();
-      } else {
-        throw new Error('Formspree error');
-      }
-    } catch (err) {
-      btn.disabled = false;
-      btn.textContent = 'Request Booking';
-      alert('Something went wrong. Please try again or call us directly.');
-      console.error(err);
-    }
-  }
-
-  function showSuccess() {
-    document.getElementById('formBody').classList.add('hidden');
-    document.getElementById('successState').classList.add('visible');
-  }
-
-  function resetForm() {
-    document.getElementById('successState').classList.remove('visible');
-    document.getElementById('formBody').classList.remove('hidden');
-    document.querySelectorAll('input, select, textarea').forEach(el => {
-      if (el.type === 'checkbox') { el.checked = false; } else { el.value = ''; }
-    });
-    document.getElementById('servicesErr').classList.remove('visible');
-    selectedDate = null;
-    selectedTime = null;
-    viewYear  = now.getFullYear();
-    viewMonth = now.getMonth();
-    renderCalendar();
-    document.getElementById('timeSlots').classList.remove('visible');
-    document.getElementById('calSelectionDisplay').textContent = '';
-    document.getElementById('calWrap').classList.remove('active','invalid');
-    document.getElementById('submitBtn').disabled = false;
-    document.getElementById('submitBtn').textContent = 'Request Booking';
-  }
+  // Booking now happens on the online booking page.
+  setTimeout(function () { window.location.href = 'https://portal.potentianetwork.com/crm/juans-auto-detailing/portal'; }, 2500);
 </script>
 
 </body>
